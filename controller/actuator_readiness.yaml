@@ -1,0 +1,13 @@
+Actuator Readiness Endpoint
+---
+definitions:
+  ReadyResponse:
+    type: object
+    properties:
+      status:
+        type: string
+responses:
+  200:
+    description: Readiness status of the application
+    schema:
+      $ref: '#/definitions/ReadyResponse'

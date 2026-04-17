@@ -1,0 +1,13 @@
+Actuator Health Endpoint
+---
+definitions:
+  HealthResponse:
+    type: object
+    properties:
+      status:
+        type: string
+responses:
+  200:
+    description: Health status of the application
+    schema:
+      $ref: '#/definitions/HealthResponse'

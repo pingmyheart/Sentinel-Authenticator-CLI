@@ -1,0 +1,24 @@
+TOTP Generate
+---
+definitions:
+  TOTPGenerateResponse:
+    type: object
+    properties:
+      label:
+        type: string
+      params:
+        type: object
+        properties:
+          secret:
+            type: string
+          issuer:
+            type: string
+      totp:
+        type: string
+      type:
+        type: string
+responses:
+  200:
+    description: Generate TOTP for each elements
+    schema:
+      $ref: '#/definitions/TOTPGenerateResponse'
