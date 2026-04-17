@@ -1,0 +1,4 @@
+from configuration import environment_impl
+from service.global_checker_service import GlobalCheckerService
+
+global_checker_service_impl = GlobalCheckerService(env=environment_impl)
