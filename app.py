@@ -66,8 +66,14 @@ def main():
     if hasattr(args, 'func'):
         args.func(args)
     elif args.version:
-        import __version__
-        print(f"arcs version {__version__.version}")
+        import ast
+
+        with open("setup.py", "r") as f:
+            tree = ast.parse(f.read())
+
+        for node in ast.walk(tree):
+            if isinstance(node, ast.keyword) and node.arg == "version":
+                print(f"sentinel-authenticator version: {node.value.s}")
     else:
         parser.print_help()
 
